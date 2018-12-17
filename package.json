@@ -1,0 +1,16 @@
+{
+  "name": "vuberapp",
+  "version": "1.0.0",
+  "description": "Uber type DB app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Zagrebelnyy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.0"
+  }
+}
