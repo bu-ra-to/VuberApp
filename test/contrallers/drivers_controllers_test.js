@@ -38,7 +38,7 @@ describe('Drivers controllers', () => {
     const driver = new Driver({ email: 'test@t.com' });
     driver.save().then(() => {
       request(app)
-        .delete(`api/drivers/${driver._id}`)
+        .delete(`/api/drivers/${driver._id}`)
         .end(() => {
           Driver.findOne({ _id: driver._id }).then(driver => {
             console.log(driver);
