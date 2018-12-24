@@ -9,7 +9,11 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect(
     'mongodb://localhost/vuber',
-    { useNewUrlParser: true }
+    {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
   );
 }
 

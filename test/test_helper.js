@@ -7,7 +7,6 @@ before(done => {
   );
   mongoose.connection
     .once('open', () => {
-      console.log('Connected for the Test');
       done();
     })
     .on('error', error => {
@@ -19,6 +18,7 @@ beforeEach(done => {
   const { drivers } = mongoose.connection.collections;
   drivers
     .drop()
+    .then(() => drivers.createIndex({ 'geometry.coordinates': '2dsphere' }))
     .then(() => done())
     .catch(() => done());
 });
